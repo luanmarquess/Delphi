@@ -1,0 +1,178 @@
+object FORM_CONTATOS: TFORM_CONTATOS
+  Left = 0
+  Top = 0
+  Caption = 'GESTAO DE CONTATOS'
+  ClientHeight = 369
+  ClientWidth = 564
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Label1: TLabel
+    Left = 32
+    Top = 51
+    Width = 46
+    Height = 19
+    Caption = 'Label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 30
+    Top = 205
+    Width = 39
+    Height = 19
+    Caption = 'Email'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 32
+    Top = 100
+    Width = 42
+    Height = 19
+    Caption = 'Nome'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 150
+    Width = 61
+    Height = 19
+    Caption = 'Telefone'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 96
+    Top = 48
+    Width = 49
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 96
+    Top = 97
+    Width = 249
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 96
+    Top = 202
+    Width = 249
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Edit4: TEdit
+    Left = 96
+    Top = 147
+    Width = 150
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Luan\Documents\Embarcadero\Studio\Projects\Win' +
+        '32\Debug\assets\contatos.mdb'
+      'DriverID=MSAcc')
+    Connected = True
+    LoginPrompt = False
+    Left = 488
+    Top = 232
+  end
+  object BindSourcecontatos: TBindSourceDB
+    DataSet = FDTablecontatos
+    ScopeMappings = <>
+    Left = 488
+    Top = 280
+  end
+  object FDTablecontatos: TFDTable
+    IndexFieldNames = 'id'
+    Connection = FDConnection1
+    TableName = 'contatos'
+    Left = 480
+    Top = 176
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 476
+    Top = 13
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourcecontatos
+      FieldName = 'nome'
+      Control = Edit2
+      Track = True
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourcecontatos
+      FieldName = 'telefone'
+      Control = Edit3
+      Track = True
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourcecontatos
+      FieldName = 'email'
+      Control = Edit4
+      Track = True
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourcecontatos
+      FieldName = 'id'
+      Control = Edit1
+      Track = True
+    end
+  end
+end
