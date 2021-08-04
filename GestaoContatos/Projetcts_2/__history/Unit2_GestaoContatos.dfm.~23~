@@ -1,0 +1,242 @@
+object form_CONTATOS: Tform_CONTATOS
+  Left = 0
+  Top = 0
+  Caption = 'GESTAO DE CONTATOS'
+  ClientHeight = 423
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = 14
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Label1: TLabel
+    Left = 8
+    Top = 81
+    Width = 16
+    Height = 14
+    Caption = 'ID:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 14
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 121
+    Width = 36
+    Height = 14
+    Caption = 'Nome:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 14
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 161
+    Width = 53
+    Height = 14
+    Caption = 'Telefone:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 14
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 205
+    Width = 31
+    Height = 14
+    Caption = 'Email:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 14
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 240
+    Width = 25
+    Height = 14
+    Caption = 'Obs:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 14
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object conexao: TLabel
+    Left = 8
+    Top = 401
+    Width = 127
+    Height = 14
+    Caption = 'Status: Nao Conectado'
+  end
+  object Label6: TLabel
+    Left = 543
+    Top = 12
+    Width = 4
+    Height = 14
+  end
+  object txt_ID: TEdit
+    Left = 67
+    Top = 78
+    Width = 41
+    Height = 22
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 14
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object txt_NOME: TEdit
+    Left = 67
+    Top = 118
+    Width = 185
+    Height = 22
+    Enabled = False
+    TabOrder = 1
+  end
+  object txt_EMAIL: TEdit
+    Left = 67
+    Top = 202
+    Width = 185
+    Height = 22
+    Enabled = False
+    TabOrder = 2
+  end
+  object txt_TELEFONE: TEdit
+    Left = 67
+    Top = 158
+    Width = 137
+    Height = 22
+    Enabled = False
+    TabOrder = 3
+  end
+  object txt_OBS: TMemo
+    Left = 67
+    Top = 237
+    Width = 185
+    Height = 89
+    Enabled = False
+    Lines.Strings = (
+      '')
+    TabOrder = 4
+  end
+  object btn_NOVO: TButton
+    Left = 225
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'NOVO'
+    TabOrder = 5
+    OnClick = btn_NOVOClick
+  end
+  object btn_Salvar: TButton
+    Left = 431
+    Top = 390
+    Width = 75
+    Height = 25
+    Caption = 'SALVAR'
+    TabOrder = 6
+    OnClick = btn_SalvarClick
+  end
+  object btn_SAIR: TButton
+    Left = 552
+    Top = 390
+    Width = 75
+    Height = 25
+    Caption = 'SAIR'
+    TabOrder = 7
+    OnClick = btn_SAIRClick
+  end
+  object btn_Prior: TButton
+    Left = 8
+    Top = 348
+    Width = 75
+    Height = 25
+    Caption = '<'
+    TabOrder = 8
+    OnClick = btn_PriorClick
+  end
+  object btn_Next: TButton
+    Left = 225
+    Top = 348
+    Width = 75
+    Height = 25
+    Caption = '>'
+    TabOrder = 9
+    OnClick = btn_NextClick
+  end
+  object btn_EDITAR: TButton
+    Left = 306
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'EDITAR'
+    TabOrder = 10
+    OnClick = btn_EDITARClick
+  end
+  object btn_EXCLUIR: TButton
+    Left = 387
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'EXCLUIR'
+    TabOrder = 11
+    OnClick = btn_EXCLUIRClick
+  end
+  object btn_CANCELAR: TButton
+    Left = 350
+    Top = 390
+    Width = 75
+    Height = 25
+    Caption = 'CANCELAR'
+    TabOrder = 12
+    OnClick = btn_CANCELARClick
+  end
+  object txt_Bucar: TEdit
+    Left = 584
+    Top = 8
+    Width = 43
+    Height = 22
+    TabOrder = 13
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Luan\Documents\Embarcadero\Studio\Projetcts_2\' +
+        'Win32\Debug\assets\contatos.mdb'
+      'DriverID=MSAcc')
+    Left = 584
+    Top = 176
+  end
+  object FDContatos: TFDTable
+    BeforePost = FDContatosBeforePost
+    Connection = FDConnection1
+    Left = 584
+    Top = 232
+  end
+  object DataSource1: TDataSource
+    DataSet = FDContatos
+    Left = 584
+    Top = 288
+  end
+end
